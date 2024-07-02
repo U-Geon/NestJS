@@ -1,8 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Query, Req, Res } from "@nestjs/common";
 import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
-import { CreateMovieDto } from "./dto/create-movie.dto";
-import { UpdateMovieDto } from "./dto/update-movie.dto";
+import { CreateMovieDto } from './dto/create-movie.dto';
+import { UpdateMovieDto } from './dto/update-movie.dto';
 
 // '/movies' 엔드포인트 컨트롤러
 @Controller('movies')
@@ -11,7 +11,7 @@ export class MoviesController {
 
   // none endpoint
   @Get()
-  getAll(@Req() req, @Res() res): Movie[] {
+  getAll(): Movie[] {
     return this.movieService.getAll();
   }
 
